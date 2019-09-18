@@ -16,9 +16,9 @@ CACRT_FILE="/etc/kubernetes/pki/ca.crt"
 CLIENTCRT_FILE="$pwd/$certName.crt"
 CLIENTKEY_FILE="$pwd/$certName.key"
 
-CACRT_DATA="newdata_moomoomoomoo"
-CLIENTCRT_DATA="newdata_bababababa"
-CLIENTKEY_DATA="newdata_keykeykey"
+CACRT_DATA=$(cat /etc/kubernetes/pki/ca.crt | base64 | tr -d '\n') 
+CLIENTCRT_DATA=$(cat $CLIENTCRT_FILE | base64 | tr -d '\n')
+CLIENTKEY_DATA=$(cat $CLIENTKEY_FILE | base64 | tr -d '\n')
 
 SERVERADDRESS="https://104.248.83.162:6443"
 CLUSTERNAME="newwonderful-cluster"
