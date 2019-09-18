@@ -6,13 +6,11 @@
 if [ -z "$certName" ]; then
   echo "Please provide the user name, should match the key and crt file name"
   read certName
-  echo "certName provided"
-  echo $certName
 fi
 
 pwd=$(pwd)
-echo $pwd
-echo "pwd above"
+
+USERNAME=$certName
 
 CACRT_FILE="/etc/kubernetes/pki/ca.crt"
 CLIENTCRT_FILE="$pwd/$certName.crt"
@@ -22,8 +20,10 @@ CACRT_DATA="newdata_moomoomoomoo"
 CLIENTCRT_DATA="newdata_bababababa"
 CLIENTKEY_DATA="newdata_keykeykey"
 
-SERVERADDRESS="newhttps://moo6447"
+SERVERADDRESS="https://104.248.83.162:6443"
 CLUSTERNAME="newwonderful-cluster"
+NAMESPACE="default"
+DEFAULTCONTEXT="default-context"
 
 MOO="MOO"
 
