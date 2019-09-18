@@ -20,7 +20,8 @@ CACRT_DATA=$(cat /etc/kubernetes/pki/ca.crt | base64 | tr -d '\n')
 CLIENTCRT_DATA=$(cat $CLIENTCRT_FILE | base64 | tr -d '\n')
 CLIENTKEY_DATA=$(cat $CLIENTKEY_FILE | base64 | tr -d '\n')
 
-SERVERADDRESS="https://104.248.83.162:6443"
+IP=$(hostname -I | awk '{print $1}')
+SERVERADDRESS="https://$IP:6443"
 CLUSTERNAME="newwonderful-cluster"
 NAMESPACE="default"
 DEFAULTCONTEXT="default-context"
