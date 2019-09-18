@@ -1,4 +1,4 @@
 *.crt
 *.pem
-*.crs
+*.csr
 *.key
