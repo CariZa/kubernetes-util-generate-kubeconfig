@@ -36,9 +36,19 @@ If you change that value in the -subj field of the cert as CN, you need to also 
     $ git clone .... // if you haven't already
     $ cd kubernetes-util-generate-kubeconfig
     $ sh generate.sh
+    $ cat generated/kubeconfig_data.yaml
 
 You will be asked a few details:
 
+    Insert the certs files name:
+    > Put in any name you want, not important
+
+    Insert the CN - Certificate Name/s:
+    > This is important, must match your rolebinding
+    > Use "user:moo" if you used my templated role and rolebinding
+
+    Insert O - group/s:
+    > Not important at this point, put in anything you want
 
 ### Overview
 
@@ -73,6 +83,10 @@ You will see two files in the generated/ folder
 For external use use the kubeconfig_data.yaml
 
 The kubeconfig_file.yaml file can only really be used on the same node it was created, so not very useful, just used originally to confirm the certs were correct.
+
+Use this file:
+
+    $ cat generated/kubeconfig_data.yaml 
 
 ### Troubleshooting
 
