@@ -59,11 +59,20 @@ There are 3 import sh scripts:
 
     > generate_certs.sh - this creates cert files using openssl
 
-    > generate.sh - this takes the provided templates, and replaces values using the envs.sh values
+    > generate_kubeconfig.sh - this takes the provided templates, and replaces values using the envs.sh values
 
 To run the scripts just run:
 
     $ sh generate.sh
+
+You will see two files in the generated/ folder
+
+    kubeconfig_data.yaml
+    kubeconfig_file.yaml
+
+For external use use the kubeconfig_data.yaml
+
+The kubeconfig_file.yaml file can only really be used on the same node it was created, so not very useful, just used originally to confirm the certs were correct.
 
 ### Troubleshooting
 
