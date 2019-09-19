@@ -26,5 +26,3 @@ CLUSTERNAME="newwonderful-cluster"
 NAMESPACE="default"
 DEFAULTCONTEXT="default-context"
 
-MOO="MOO"
-
